@@ -1,0 +1,34 @@
+                                            Binarios
+
+Os dados gravados em um arquivo binário são gravados exatamente como estão 
+organizados na memória do computador. Isso significa que não existe uma etapa de 
+“conversão” dos dados. Portanto, suas operações de escrita e leitura são mais rápidas 
+do que as realizadas em arquivos texto.
+
+São exemplos de arquivos binários os arquivos executáveis, arquivos compactados, 
+arquivos de registros etc.
+
+Caracteres são legíveis tanto em arquivos texto quanto os arquivos binários.
+
+----    ----    -----   ------  -----   
+
+FILE *p;
+Nesse caso, p é o ponteiro que nos permitirá manipular arquivos na linguagem C. 
+Um ponteiro de arquivo nada mais é do que um ponteiro para uma área na memória 
+chamada de “buffer”. Nela se encontram vários dados sobre o arquivo aberto, como o 
+seu nome e a posição atual
+
+
+Modo    Arquivo                 Função
+“r”     Texto Leitura.          Arquivo deve existir. 
+“w”     Texto Escrita.          Cria arquivo, se não houver. Apaga o anterior, se ele existir. 
+“a”     Texto Escrita.          Os dados serão adicionados no fim do arquivo (“append”). 
+“rb”    Binário Leitura.        Arquivo deve existir. 
+“wb”    Binário Escrita.        Cria arquivo se não houver. Apaga o anterior se ele existir. 
+“ab”    Binário Escrita.        Os dados serão adicionados no fim do arquivo (“append”). 
+“r+”    Texto Leitura/escrita.  O arquivo deve existir e pode ser modificado. 
+“w+”    Texto Leitura/escrita.  Cria arquivo se não houver. Apaga o anterior se ele existir. 
+“a+”    Texto Leitura/escrita.  Os dados serão adicionados no fim do arquivo (“append”). 
+“r+b”   Binário Leitura/escrita. O arquivo deve existir e pode ser modificado. 
+“w+b”   Binário Leitura/escrita. Cria arquivo se não houver. Apaga o anterior se ele existir. 
+“a+b”   Binário Leitura/escrita. Os dados serão adicionados no fim do arquivo (“append”)
