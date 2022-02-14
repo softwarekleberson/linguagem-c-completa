@@ -1,39 +1,61 @@
-/*
-Crie uma estrutura representando um aluno de uma disciplina. Essa estrutura 
-deve conter o número de matrícula do aluno, seu nome e as notas de três provas. 
-Agora, escreva um programa que leia os dados de cinco alunos e os armazena nessa 
-estrutura. Em seguida, exiba o nome e as notas do aluno que possui a maior média 
-geral dentre os cinco
-*/
-
 #include<stdlib.h>
 #include<stdio.h>
 
-struct diciplina {
-
+struct aluno
+{
     char nome[100];
     int matricula;
-    float nota1;
-    float nota2;
-    float nota3;
+    float notas[2];
     float media;
-
 };
 
 int main(){
 
-    struct diciplina aluno[5];
+    struct aluno kleberson[2];
+    float maiorNota = 0;
 
-    for (int i = 0; i < 5; i++){
+    printf("\n ----------------------- Cadastro Aluno ----------------------------------- \n\n");
 
-        fgets(aluno[i].nome,100,stdin);
-        scanf("%d",&aluno[i].matricula);
-        
-        scanf("%f",&aluno[i].nota1);
-        scanf("%f",&aluno[i].nota2);
-        scanf("%f",&aluno[i].nota3);
+    for (int i = 0; i < 2; i++) {
+            
+        printf("Seu nome :\n");
+        fflush(stdin);
+        fgets(kleberson[i].nome,100,stdin);
+
+        printf("Seu numero matricula : \n");
+        scanf("%d",&kleberson[i].matricula);
+
+        printf("Nota 1 : \n");
+        scanf("%f",&kleberson[i].notas[0]);
+
+        printf("Nota 2 : \n");
+        scanf("%f",&kleberson[i].notas[1]);
+
+        printf("Nota 3 : \n");
+        scanf("%f",&kleberson[i].notas[2]);
+
+        kleberson[i].media = (kleberson[i].notas[0] + kleberson[i].notas[1] + kleberson[i].notas[2]) / 3;
 
     }
 
-    
+    printf("\n -------------------------------- Lendo Os Dados ----------------------------- \n\n");
+
+    for (int i = 0; i < 2; i++){
+        
+        printf("Nome ................................. : %s\n", kleberson[i].nome);
+        printf("Matricula ............................ : %d\n", kleberson[i].matricula);
+        printf("Media ................................ : %.2f\n\n", kleberson[i].media);
+    }
+
+    for (int i = 0; i < 2; i++) {
+        
+        if (kleberson[i].media > maiorNota){
+            maiorNota = kleberson[i].media;
+        }
+    }
+
+    printf("\n -------------------------------- Maior Nota ----------------------------- \n\n");
+    printf("Maior Nota ............................... : %.2f", maiorNota);
+
+    getch();
 }

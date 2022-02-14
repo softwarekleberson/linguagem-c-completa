@@ -15,7 +15,7 @@ void imprime(int *n){
 
 int main(){
 
-    struct referencia p1 = {10,20,30};
+    struct referencia p1 = {10,20};
     imprime(&p1.x);
 
     printf("%d",p1.x);

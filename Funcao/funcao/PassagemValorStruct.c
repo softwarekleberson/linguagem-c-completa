@@ -11,7 +11,7 @@ void boleto(int n){
 
 int main(){
 
-    struct conta pagar = { 150, 500, 900};
+    struct conta pagar = { 150, 500};
     boleto(pagar.luz);
     boleto(pagar.agua);
 }
